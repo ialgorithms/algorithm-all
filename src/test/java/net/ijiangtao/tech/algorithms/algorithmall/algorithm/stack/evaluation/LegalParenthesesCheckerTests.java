@@ -15,9 +15,32 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class LegalParenthesesCheckerTests {
 
     @Test
+    public void test(){
+
+       String[] strings={};
+        swap(strings,0,1);
+
+        int a=Integer.MAX_VALUE+2;
+        int b=Integer.MAX_VALUE+1;
+        System.out.println(compare(a,b));
+    }
+
+    public static <T> void swap(T[] array,int i,int j){
+        T temp=array[i];
+        array[i]=array[j];
+        array[j]=temp;
+    }
+
+
+    public boolean compare(int a,int b){
+        return (a-b)>0;
+       //return Integer.compare(a,b)>0;
+    }
+
+    @Test
     public void testChecker(){
 
-        Assert.assertFalse(LegalParenthesesChecker.check("1}"));
+        Assert.assertTrue(LegalParenthesesChecker.check("{2((1))rr}"));
         Assert.assertFalse(LegalParenthesesChecker.check("[1}"));
         Assert.assertFalse(LegalParenthesesChecker.check("[]["));
         Assert.assertFalse(LegalParenthesesChecker.check(")("));

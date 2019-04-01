@@ -7,7 +7,6 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
         private Value value;
         private Node leftNode, rightNode;
         private int nodeNumber;
-
         public Node(Key key, Value value, int nodeNumber) {
             this.key = key;
             this.value = value;
